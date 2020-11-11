@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ziq-7h-Y5N">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Custom Side Menu Navigation-->
+        <scene sceneID="COs-lN-dmc">
+            <objects>
+                <navigationController id="hjX-mZ-NkI" customClass="CustomSideMenuNavigation" customModule="A_BOUT_COFFEE" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ry3-tV-uXB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NmY-rw-fh8">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="F5x-HH-r1g" kind="relationship" relationship="rootViewController" id="dZc-pm-7kp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlt-nm-jHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-304" y="-144"/>
+        </scene>
+        <!--Side Menu View Controller-->
+        <scene sceneID="fcL-vE-GJ4">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F5x-HH-r1g" customClass="SideMenuViewController" customModule="A_BOUT_COFFEE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hcp-RZ-0WU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bd3-1a-TJo">
+                                <rect key="frame" x="0.0" y="88" width="414" height="157"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gbc-Bq-fo9">
+                                <rect key="frame" x="0.0" y="245" width="414" height="617"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="subMenuCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="79" id="YGA-5M-BOh" customClass="SubMenuTableViewCell" customModule="A_BOUT_COFFEE" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="79"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YGA-5M-BOh" id="9Yn-iO-ka3">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Bd3-1a-TJo" firstAttribute="trailing" secondItem="ucC-bu-eUo" secondAttribute="trailing" id="2ST-Ub-fBj"/>
+                            <constraint firstItem="Bd3-1a-TJo" firstAttribute="leading" secondItem="ucC-bu-eUo" secondAttribute="leading" id="7N7-zw-Kfi"/>
+                            <constraint firstItem="ucC-bu-eUo" firstAttribute="bottom" secondItem="Gbc-Bq-fo9" secondAttribute="bottom" id="8Lb-Cu-W3C"/>
+                            <constraint firstItem="Bd3-1a-TJo" firstAttribute="top" secondItem="ucC-bu-eUo" secondAttribute="top" id="CWR-eS-kFF"/>
+                            <constraint firstAttribute="bottom" secondItem="Bd3-1a-TJo" secondAttribute="bottom" constant="651" id="N3N-Cj-pcR"/>
+                            <constraint firstItem="Bd3-1a-TJo" firstAttribute="leading" secondItem="Gbc-Bq-fo9" secondAttribute="leading" id="YU0-81-Vj5"/>
+                            <constraint firstItem="Gbc-Bq-fo9" firstAttribute="top" secondItem="Bd3-1a-TJo" secondAttribute="bottom" id="aLm-Nq-51C"/>
+                            <constraint firstItem="Bd3-1a-TJo" firstAttribute="trailing" secondItem="Gbc-Bq-fo9" secondAttribute="trailing" id="qm7-33-xfw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ucC-bu-eUo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LXG-Yt-OKv">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="tdl-bh-QhM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nZu-wh-LpK">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="로그인">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="MtT-bX-9KI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pmi-bj-uXU">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="설정">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Gbc-Bq-fo9" id="3wo-KB-xAd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3y-Xh-FJ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="471.01449275362324" y="-145.3125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lUg-iU-eqj">
+            <objects>
+                <navigationController id="ziq-7h-Y5N" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Eu-Ed-iub">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="beS-O6-z1o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXH-Td-xRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-304" y="524"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="A_BOUT_COFFEE" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="UzW-dc-gaL">
+                        <barButtonItem key="leftBarButtonItem" image="line.horizontal.3" catalog="system" id="dki-Xo-MqO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="hjX-mZ-NkI" kind="show" id="r7f-Wy-OyW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sideBarButton" destination="dki-Xo-MqO" id="O2N-Cu-nLn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="428" y="524"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
+    </resources>
 </document>
