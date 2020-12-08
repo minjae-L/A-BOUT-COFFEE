@@ -15,6 +15,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var sideBarButton: UIBarButtonItem!
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var subscriptionView: UIView!
+    @IBOutlet weak var pass_orderView: UIView!
+    @IBOutlet weak var giftView: UIView!
     
     override func viewDidLoad() {
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
@@ -25,6 +29,16 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.backgroundColor = .black
         super.viewDidLoad()
+        
+        cardView.layer.borderWidth = 0.5
+        cardView.layer.borderColor = UIColor.gray.cgColor
+        subscriptionView.layer.borderWidth = 0.5
+        subscriptionView.layer.borderColor = UIColor.gray.cgColor
+        pass_orderView.layer.borderWidth = 0.5
+        pass_orderView.layer.borderColor = UIColor.gray.cgColor
+        giftView.layer.borderWidth = 0.5
+        giftView.layer.borderColor = UIColor.gray.cgColor
+        
         // Do any additional setup after loading the view.
     }
 

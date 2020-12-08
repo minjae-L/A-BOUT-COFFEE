@@ -24,6 +24,7 @@
 		B51F2733255C4A860044D6A4 /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B51F2724255C4A610044D6A4 /* NotoSansMonoCJKkr-Regular.otf */; };
 		B51F273E255C52A90044D6A4 /* SubMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51F273C255C52A90044D6A4 /* SubMenuTableViewCell.swift */; };
 		B51F273F255C52A90044D6A4 /* SubMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51F273D255C52A90044D6A4 /* SubMenuTableViewCell.xib */; };
+		B570A7E2257D0C7A007BBB78 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B570A7E1257D0C7A007BBB78 /* LoginViewController.swift */; };
 		B5A6253D255A95BA00EED7C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6253C255A95BA00EED7C5 /* AppDelegate.swift */; };
 		B5A6253F255A95BA00EED7C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6253E255A95BA00EED7C5 /* SceneDelegate.swift */; };
 		B5A62541255A95BA00EED7C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A62540255A95BA00EED7C5 /* ViewController.swift */; };
@@ -32,6 +33,8 @@
 		B5A62549255A95BB00EED7C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5A62547255A95BB00EED7C5 /* LaunchScreen.storyboard */; };
 		B5A62554255A95BB00EED7C5 /* A_BOUT_COFFEETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A62553255A95BB00EED7C5 /* A_BOUT_COFFEETests.swift */; };
 		B5A6255F255A95BB00EED7C5 /* A_BOUT_COFFEEUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A6255E255A95BB00EED7C5 /* A_BOUT_COFFEEUITests.swift */; };
+		B5E80BF9257DF8EE0054BDB5 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E80BF8257DF8EE0054BDB5 /* SignUpViewController.swift */; };
+		B5E80BFB257E0F840054BDB5 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E80BFA257E0F840054BDB5 /* SetNicknameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,7 @@
 		B51F272A255C4A660044D6A4 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
 		B51F273C255C52A90044D6A4 /* SubMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMenuTableViewCell.swift; sourceTree = "<group>"; };
 		B51F273D255C52A90044D6A4 /* SubMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubMenuTableViewCell.xib; sourceTree = "<group>"; };
+		B570A7E1257D0C7A007BBB78 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B5A62539255A95BA00EED7C5 /* A-BOUT-COFFEE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A-BOUT-COFFEE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A6253C255A95BA00EED7C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5A6253E255A95BA00EED7C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		B5A6255A255A95BB00EED7C5 /* A-BOUT-COFFEEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "A-BOUT-COFFEEUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A6255E255A95BB00EED7C5 /* A_BOUT_COFFEEUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_BOUT_COFFEEUITests.swift; sourceTree = "<group>"; };
 		B5A62560255A95BB00EED7C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E80BF8257DF8EE0054BDB5 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B5E80BFA257E0F840054BDB5 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
 		D09C7C4E05EFEAA63D1835D1 /* Pods-A-BOUT-COFFEETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-BOUT-COFFEETests.release.xcconfig"; path = "Target Support Files/Pods-A-BOUT-COFFEETests/Pods-A-BOUT-COFFEETests.release.xcconfig"; sourceTree = "<group>"; };
 		ECB25EAC85CE2ACE4D7B7685 /* Pods_A_BOUT_COFFEE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_BOUT_COFFEE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -173,6 +179,8 @@
 		B5A6253B255A95BA00EED7C5 /* A-BOUT-COFFEE */ = {
 			isa = PBXGroup;
 			children = (
+				B5E80BFD257E0FA30054BDB5 /* sidemenu */,
+				B5E80BFC257E0F890054BDB5 /* login */,
 				B51F2721255C4A370044D6A4 /* font */,
 				B5A6253C255A95BA00EED7C5 /* AppDelegate.swift */,
 				B5A6253E255A95BA00EED7C5 /* SceneDelegate.swift */,
@@ -182,10 +190,6 @@
 				B5A62545255A95BB00EED7C5 /* Assets.xcassets */,
 				B5A62547255A95BB00EED7C5 /* LaunchScreen.storyboard */,
 				B5A6254A255A95BB00EED7C5 /* Info.plist */,
-				B51F271D255C20180044D6A4 /* SideMenuViewController.swift */,
-				B51F271F255C205C0044D6A4 /* CustomSideMenuNavigation.swift */,
-				B51F273C255C52A90044D6A4 /* SubMenuTableViewCell.swift */,
-				B51F273D255C52A90044D6A4 /* SubMenuTableViewCell.xib */,
 			);
 			path = "A-BOUT-COFFEE";
 			sourceTree = "<group>";
@@ -206,6 +210,27 @@
 				B5A62560255A95BB00EED7C5 /* Info.plist */,
 			);
 			path = "A-BOUT-COFFEEUITests";
+			sourceTree = "<group>";
+		};
+		B5E80BFC257E0F890054BDB5 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				B570A7E1257D0C7A007BBB78 /* LoginViewController.swift */,
+				B5E80BF8257DF8EE0054BDB5 /* SignUpViewController.swift */,
+				B5E80BFA257E0F840054BDB5 /* SetNicknameViewController.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		B5E80BFD257E0FA30054BDB5 /* sidemenu */ = {
+			isa = PBXGroup;
+			children = (
+				B51F273D255C52A90044D6A4 /* SubMenuTableViewCell.xib */,
+				B51F273C255C52A90044D6A4 /* SubMenuTableViewCell.swift */,
+				B51F271D255C20180044D6A4 /* SideMenuViewController.swift */,
+				B51F271F255C205C0044D6A4 /* CustomSideMenuNavigation.swift */,
+			);
+			path = sidemenu;
 			sourceTree = "<group>";
 		};
 		B8EB1747B652E14A7D3431C8 /* Frameworks */ = {
@@ -230,6 +255,7 @@
 				B5A62536255A95BA00EED7C5 /* Frameworks */,
 				B5A62537255A95BA00EED7C5 /* Resources */,
 				D787F807C0FB789544E1A3DC /* [CP] Embed Pods Frameworks */,
+				EC2255723B149E9060FDA9AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +294,7 @@
 				B5A62557255A95BB00EED7C5 /* Frameworks */,
 				B5A62558255A95BB00EED7C5 /* Resources */,
 				3864EC6B5B3D57A236E01FF5 /* [CP] Embed Pods Frameworks */,
+				210B141DFDF9A26DA3199D3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,6 +411,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		210B141DFDF9A26DA3199D3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-A-BOUT-COFFEE-A-BOUT-COFFEEUITests/Pods-A-BOUT-COFFEE-A-BOUT-COFFEEUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-A-BOUT-COFFEE-A-BOUT-COFFEEUITests/Pods-A-BOUT-COFFEE-A-BOUT-COFFEEUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-A-BOUT-COFFEE-A-BOUT-COFFEEUITests/Pods-A-BOUT-COFFEE-A-BOUT-COFFEEUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3864EC6B5B3D57A236E01FF5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +506,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EC2255723B149E9060FDA9AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-A-BOUT-COFFEE/Pods-A-BOUT-COFFEE-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-A-BOUT-COFFEE/Pods-A-BOUT-COFFEE-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-A-BOUT-COFFEE/Pods-A-BOUT-COFFEE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -469,7 +530,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B570A7E2257D0C7A007BBB78 /* LoginViewController.swift in Sources */,
 				B51F271E255C20180044D6A4 /* SideMenuViewController.swift in Sources */,
+				B5E80BF9257DF8EE0054BDB5 /* SignUpViewController.swift in Sources */,
+				B5E80BFB257E0F840054BDB5 /* SetNicknameViewController.swift in Sources */,
 				B5A62541255A95BA00EED7C5 /* ViewController.swift in Sources */,
 				B51F2720255C205C0044D6A4 /* CustomSideMenuNavigation.swift in Sources */,
 				B5A6253D255A95BA00EED7C5 /* AppDelegate.swift in Sources */,
