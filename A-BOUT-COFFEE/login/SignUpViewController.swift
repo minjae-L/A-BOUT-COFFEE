@@ -98,6 +98,8 @@ class SignUpViewController: UIViewController {
                         if self.isSuccessSignUp == 1 {
                             UserDefaults.standard.set(self.emailTextField.text!, forKey: "currentID")
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "setNicknameView")
+//                            vc?.modalPresentationStyle = .fullScreen
+//                            self.present(vc!, animated: true, completion: nil)
                                 self.navigationController?.pushViewController(vc!, animated: true)
 //                          self.navigationController?.popViewController(animated: true)
                         }

@@ -54,7 +54,9 @@ class LoginViewController: UIViewController {
     
     @IBAction func signupBtn(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "signupView")
-        self.navigationController?.pushViewController(vc!, animated: true)
+//        vc?.modalPresentationStyle = .fullScreen
+//        self.present(vc!, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc!, animated: true)
     }
     
    

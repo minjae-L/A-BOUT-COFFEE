@@ -7,16 +7,34 @@
 //
 
 import UIKit
+import Firebase
 
 class SideMenuViewController: UIViewController {
 
+    var ref: DocumentReference? = nil
     var subMenuName = ["홈", "바코드", "이벤트", "기프트샵", "제품", "가게"]
     var imageName = ["house", "barcode", "doc.text", "gift", "cube", "cart"]
     var image : UIImage?
+    var username = UserDefaults.standard.string(forKey: "currentID")!
+
     
+    
+    func getUserNickname (email: String){
+        let db = Firestore.firestore()
+        let docRef = db.collection("User").document(email)
+        docRef.getDocument {
+            (document, error) in
+            if let document = document, document.exists {
+                UserDefaults.standard.set(document.get("nickname"), forKey: "currentNick")
+                print(UserDefaults.standard.string(forKey: "currentNick"))
+            } else {
+                print("Document is not exist")
+            }
+        }
+    }
+
     @IBOutlet weak var usernameLabel: UILabel!
     @IBAction func login(_ sender: Any) {
-        print("login")
         let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
         loginView?.modalPresentationStyle = .fullScreen
         loginView?.modalTransitionStyle = .coverVertical
@@ -26,7 +44,13 @@ class SideMenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
-        usernameLabel.text = "안녕하세요. 에이바우트 입니다."
+        print(username)
+        if (username != "") {
+            print("여기는? \(UserDefaults.standard.string(forKey: "currentNick"))")
+            usernameLabel.text = "안녕하세요 \(UserDefaults.standard.string(forKey: "currentNick")) 님"
+        } else {
+           usernameLabel.text = "안녕하세요. 에이바우트 입니다."
+        }
         
         tableView.dataSource = self
         tableView.delegate = self

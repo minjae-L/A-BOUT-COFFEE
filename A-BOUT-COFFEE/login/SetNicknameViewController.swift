@@ -11,41 +11,45 @@ import Firebase
 
 class SetNicknameViewController: UIViewController {
     
+    
     var ref: DocumentReference? = nil
     
     
     @IBOutlet weak var nicknameField: UITextField!
-    @IBOutlet weak var setNickname: UIButton!
+    
     let getSavedId = UserDefaults.standard.string(forKey: "currentID")!
     
     func setNickname(nickname: String, currentEmail: String) {
-        let db = Firestore.firestore()
         
-        db.collection("User").whereField("username", isEqualTo: currentEmail).getDocuments() {(querySnapshot, err) in
+        let db = Firestore.firestore()
+        let location = db.collection("User").document(currentEmail)
+        let alert = UIAlertController(title: "닉네임 설정", message: "닉네임이 \(nickname)로 설정되었습니다.", preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "확인", style: .default, handler: {
+            (_) in
+            self.navigationController?.popToRootViewController(animated: true)
+        })
+        alert.addAction(okBtn)
+        
+        print(nickname)
+        print(currentEmail)
+        
+        location.updateData([
+            "nickname": nickname
+        ]){ err in
             if let err = err {
-                print("Error getting documents: \(err)")
+                print("Error updating document: \(err)")
             } else {
-                for document in querySnapshot!.documents {
-                    print(document.documentID)
-                    db.collection("User").document(document.documentID).updateData([
-                        "username": currentEmail,
-                        "nickname": nickname,
-                        "ExistNickname": "true"
-                    ]){ err in
-                        if let err = err {
-                            print("Error: \(err)")
-                        } else {
-                            print("Document successfully written!")
-                        }
-                    }
-                }
+                print("Document successfully updated")
             }
-            
         }
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        self.nicknameField.text = ""
     }
+
     @IBAction func settingNickname(_ sender: Any) {
         setNickname(nickname: nicknameField.text!,currentEmail: getSavedId)
-//        self.navigationController?.popViewController(animated: true)
     }
     
     override func viewDidLoad() {
