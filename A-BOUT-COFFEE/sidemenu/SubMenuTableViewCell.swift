@@ -15,6 +15,7 @@ class SubMenuTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.borderColor = UIColor.lightGray.cgColor
         // Initialization code
     }
 

@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
                 print("login success")
                 self.isLogining = 1
                 UserDefaults.standard.set(self.isLogining, forKey: "chekingLogin")
+                UserDefaults.standard.set(self.emailTextField.text!, forKey: "currentID")
                 self.navigationController?.popViewController(animated: true)
             } else {
                 print("login fail")

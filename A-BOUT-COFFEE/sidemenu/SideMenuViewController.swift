@@ -11,47 +11,97 @@ import Firebase
 
 class SideMenuViewController: UIViewController {
 
+    
+    @IBOutlet weak var isSub: UILabel!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var pointLabel: UILabel!
+    
     var ref: DocumentReference? = nil
     var subMenuName = ["홈", "바코드", "이벤트", "기프트샵", "제품", "가게"]
     var imageName = ["house", "barcode", "doc.text", "gift", "cube", "cart"]
     var image : UIImage?
     var username = UserDefaults.standard.string(forKey: "currentID")!
-
+    var userNickname : String?
     
     
     func getUserNickname (email: String){
         let db = Firestore.firestore()
-        let docRef = db.collection("User").document(email)
-        docRef.getDocument {
-            (document, error) in
-            if let document = document, document.exists {
-                UserDefaults.standard.set(document.get("nickname"), forKey: "currentNick")
-                print(UserDefaults.standard.string(forKey: "currentNick"))
+        
+        db.collection("User").document(email).getDocument {
+            (snapshot, err) in
+            if let err = err {
+                print("Error getting documents \(err)")
             } else {
-                print("Document is not exist")
+                if let nickname = snapshot?.get("nickname") as? String {
+                    print(nickname)
+                    self.usernameLabel.text = "안녕하세요. \(nickname) 님"
+                }
+                if let subscription = snapshot?.get("subscription") as? Bool {
+                    print(subscription)
+                    if (subscription == true) {
+                        self.isSub.text = "구독중"
+                        self.isSub.textColor = UIColor.green
+                    } else {
+                        self.isSub.text = "미구독"
+                        self.isSub.textColor = UIColor.red
+                    }
+                }
+                if let point = snapshot?.get("point") as? Int {
+                    print(point)
+                    self.pointLabel.text = "포인트 : \(point)"
+                }
             }
         }
     }
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBAction func login(_ sender: Any) {
-        let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
-        loginView?.modalPresentationStyle = .fullScreen
-        loginView?.modalTransitionStyle = .coverVertical
-        self.navigationController?.pushViewController(loginView!, animated: true)
+        if (username == "") {
+            let loginView = self.storyboard?.instantiateViewController(withIdentifier: "loginView")
+            loginView?.modalPresentationStyle = .fullScreen
+            loginView?.modalTransitionStyle = .coverVertical
+            self.navigationController?.pushViewController(loginView!, animated: true)
+        } else {
+            let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "예", style: .default, handler: { (_) in
+                UserDefaults.standard.set("", forKey: "currentID")
+                let confirmLogoutAlert = UIAlertController(title: "로그아웃", message: "로그아웃되었습니다.", preferredStyle: .alert)
+                self.loginBtn.setTitle("로그인", for: .normal)
+                self.usernameLabel.text = "안녕하세요. 에이바우트 입니다."
+                self.isSub.text = ""
+                self.pointLabel.text = ""
+                let confirm = UIAlertAction(title: "확인", style: .default, handler: { (_) in
+                    self.dismiss(animated: true, completion: nil)
+                })
+                confirmLogoutAlert.addAction(confirm)
+                self.present(confirmLogoutAlert, animated: true, completion:  nil)
+            })
+            let no = UIAlertAction(title: "아니오", style: .default, handler: nil)
+            alert.addAction(ok)
+            alert.addAction(no)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
-        print(username)
+        isSub.textAlignment = .right
+        usernameLabel.textAlignment = .right
+        usernameLabel.textColor = .white
+        usernameLabel.font = .systemFont(ofSize: 20, weight: .bold)
+        pointLabel.textAlignment = .right
+        pointLabel.textColor = .white
         if (username != "") {
-            print("여기는? \(UserDefaults.standard.string(forKey: "currentNick"))")
-            usernameLabel.text = "안녕하세요 \(UserDefaults.standard.string(forKey: "currentNick")) 님"
+            getUserNickname(email: username)
+            loginBtn.setTitle("로그아웃", for: .normal)
         } else {
-           usernameLabel.text = "안녕하세요. 에이바우트 입니다."
+            usernameLabel.text = "안녕하세요. 에이바우트 입니다."
+            loginBtn.setTitle("로그인", for: .normal)
+            isSub.text = ""
+            pointLabel.text = ""
         }
-        
+
         tableView.dataSource = self
         tableView.delegate = self
         
