@@ -67,7 +67,7 @@ class SideMenuViewController: UIViewController {
                 UserDefaults.standard.set("", forKey: "currentID")
                 let confirmLogoutAlert = UIAlertController(title: "로그아웃", message: "로그아웃되었습니다.", preferredStyle: .alert)
                 self.loginBtn.setTitle("로그인", for: .normal)
-                self.usernameLabel.text = "안녕하세요. 에이바우트 입니다."
+                self.usernameLabel.text = "로그인 해주세요."
                 self.isSub.text = ""
                 self.pointLabel.text = ""
                 let confirm = UIAlertAction(title: "확인", style: .default, handler: { (_) in
@@ -96,7 +96,7 @@ class SideMenuViewController: UIViewController {
             getUserNickname(email: username)
             loginBtn.setTitle("로그아웃", for: .normal)
         } else {
-            usernameLabel.text = "안녕하세요. 에이바우트 입니다."
+            usernameLabel.text = "로그인 해주세요."
             loginBtn.setTitle("로그인", for: .normal)
             isSub.text = ""
             pointLabel.text = ""

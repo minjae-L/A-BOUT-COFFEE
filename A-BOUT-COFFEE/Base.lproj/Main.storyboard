@@ -369,17 +369,29 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BqJ-8C-19b" userLabel="statusView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
-                                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hin-uQ-UXx">
+                                                <rect key="frame" x="5" y="5" width="404" height="40"/>
+                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="OnM-fk-8Yt"/>
+                                            <constraint firstAttribute="trailing" secondItem="hin-uQ-UXx" secondAttribute="trailing" constant="5" id="8qP-P0-RWh"/>
+                                            <constraint firstItem="hin-uQ-UXx" firstAttribute="leading" secondItem="BqJ-8C-19b" secondAttribute="leading" constant="5" id="L61-5n-0pQ"/>
+                                            <constraint firstItem="hin-uQ-UXx" firstAttribute="top" secondItem="BqJ-8C-19b" secondAttribute="top" constant="5" id="QAf-eq-7lA"/>
+                                            <constraint firstAttribute="bottom" secondItem="hin-uQ-UXx" secondAttribute="bottom" constant="5" id="RIK-bs-SOb"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="TOT-Fp-FEN"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tE3-Vn-sWy" userLabel="adsView">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="250"/>
-                                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="300"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="250" id="B6v-27-NBw"/>
+                                            <constraint firstAttribute="height" constant="300" id="B6v-27-NBw"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uxk-Ha-Dmq">
@@ -532,9 +544,11 @@
                     <connections>
                         <outlet property="cardView" destination="UZ5-fq-vfG" id="8i8-uC-com"/>
                         <outlet property="giftView" destination="osW-OB-4j1" id="I8m-jx-WIj"/>
+                        <outlet property="mainMsg" destination="hin-uQ-UXx" id="gfO-wI-tdM"/>
                         <outlet property="pass_orderView" destination="nkv-yT-joU" id="rCk-rr-Dzy"/>
                         <outlet property="sideBarButton" destination="dki-Xo-MqO" id="O2N-Cu-nLn"/>
                         <outlet property="subscriptionView" destination="sqn-Wr-tid" id="Kxm-wX-Je1"/>
+                        <outlet property="upperView" destination="tE3-Vn-sWy" id="JxK-Ze-JA7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
