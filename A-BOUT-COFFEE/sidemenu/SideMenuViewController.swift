@@ -9,6 +9,10 @@
 import UIKit
 import Firebase
 
+protocol ProtocolData {
+    func protocolData(dataSent: Int)
+}
+
 class SideMenuViewController: UIViewController {
 
     
@@ -22,7 +26,10 @@ class SideMenuViewController: UIViewController {
     var image : UIImage?
     var username = UserDefaults.standard.string(forKey: "currentID")!
     var userNickname : String?
+    var checkLogin : Int = 0
     
+    var dataReceived: String = ""
+    var delegate: ProtocolData?
     
     func getUserNickname (email: String){
         let db = Firestore.firestore()
@@ -71,6 +78,7 @@ class SideMenuViewController: UIViewController {
                 self.isSub.text = ""
                 self.pointLabel.text = ""
                 let confirm = UIAlertAction(title: "확인", style: .default, handler: { (_) in
+                    self.delegate?.protocolData(dataSent: 1)
                     self.dismiss(animated: true, completion: nil)
                 })
                 confirmLogoutAlert.addAction(confirm)
